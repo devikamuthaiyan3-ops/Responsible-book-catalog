@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Responsive Online Book Catalog - College MWP Mini Project built with HTML, CSS, and JavaScript.">
+    <title>BookVerse | Responsive Online Book Catalog</title>
+    
+    <!-- Google Fonts: Inter for clean body text, Playfair Display for elegant headings -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons for UI elements -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ==============================================
+         1. HEADER & NAVIGATION BAR
+         ============================================== -->
+    <header class="header" id="header">
+        <div class="nav-container">
+            <!-- Brand Logo -->
+            <a href="#home" class="logo" aria-label="BookVerse Home">
+                <span class="logo-icon"><i class="fa-solid fa-book-open-reader"></i></span>
+                <span class="logo-text">Book<span class="logo-highlight">Verse</span></span>
+            </a>
+
+            <!-- Desktop & Tablet Navigation Menu -->
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link active"><i class="fa-solid fa-house"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#catalog" class="nav-link"><i class="fa-solid fa-book"></i> Catalog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#categories" class="nav-link"><i class="fa-solid fa-layer-group"></i> Categories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link"><i class="fa-solid fa-circle-info"></i> About Project</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Header Action Controls -->
+            <div class="header-actions">
+                <!-- Wishlist / Favorites Counter -->
+                <button class="wishlist-btn" id="wishlist-btn" title="View Saved Books" aria-label="View Favorites">
+                    <i class="fa-solid fa-heart"></i>
+                    <span class="wishlist-badge" id="wishlist-badge">0</span>
+                </button>
+
+                <!-- Mobile Hamburger Toggle -->
+                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==============================================
+         2. HERO SECTION
+         ============================================== -->
+    <section class="hero-section" id="home">
+        <div class="hero-overlay"></div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="hero-badge"><i class="fa-solid fa-graduation-cap"></i> College MWP Mini Project</span>
+                <h1 class="hero-title">Discover, Learn & Explore Your Next Favorite Read</h1>
+                <p class="hero-description">
+                    Welcome to <strong>BookVerse</strong> — an interactive and responsive online book catalog featuring curated titles across Programming, Fiction, Science, and Technology.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#catalog" class="btn btn-primary">
+                        <i class="fa-solid fa-magnifying-glass"></i> Browse Catalog
+                    </a>
+                    <a href="#categories" class="btn btn-outline">
+                        <i class="fa-solid fa-shapes"></i> View Categories
+                    </a>
+                </div>
+
+                <!-- Quick Stats Highlights -->
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <span class="stat-number" id="total-books-count">16+</span>
+                        <span class="stat-label">Curated Books</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">4</span>
+                        <span class="stat-label">Main Genres</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Responsive</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==============================================
+         3. CATEGORIES HIGHLIGHT SECTION
+         ============================================== -->
+    <section class="categories-section" id="categories">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">Featured Genres</span>
+                <h2 class="section-title">Explore By Popular Categories</h2>
+                <div class="section-divider"></div>
+                <p class="section-subtitle">Click any category card below to filter the catalog instantly.</p>
+            </div>
+
+            <div class="categories-grid">
+                <!-- Programming Category Card -->
+                <div class="category-card" data-category="Programming">
+                    <div class="category-icon prog-icon">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h3 class="category-name">Programming</h3>
+                    <p class="category-desc">Master web development, clean architecture, Python, and software craftsmanship.</p>
+                    <span class="category-link">Filter Books <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+
+                <!-- Fiction Category Card -->
+                <div class="category-card" data-category="Fiction">
+                    <div class="category-icon fiction-icon">
+                        <i class="fa-solid fa-feather-pointed"></i>
+                    </div>
+                    <h3 class="category-name">Fiction</h3>
+                    <p class="category-desc">Immerse yourself in timeless classics, philosophical novels, and gripping stories.</p>
+                    <span class="category-link">Filter Books <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+
+                <!-- Science Category Card -->
+                <div class="category-card" data-category="Science">
+                    <div class="category-icon science-icon">
+                        <i class="fa-solid fa-atom"></i>
+                    </div>
+                    <h3 class="category-name">Science</h3>
+                    <p class="category-desc">Unravel the cosmos, human evolution, astrophysics, and the mysteries of nature.</p>
+                    <span class="category-link">Filter Books <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+
+                <!-- Technology Category Card -->
+                <div class="category-card" data-category="Technology">
+                    <div class="category-icon tech-icon">
+                        <i class="fa-solid fa-microchip"></i>
+                    </div>
+                    <h3 class="category-name">Technology</h3>
+                    <p class="category-desc">Explore AI frontiers, computing history, digital innovation, and user design.</p>
+                    <span class="category-link">Filter Books <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==============================================
+         4. MAIN BOOK CATALOG SECTION
+         ============================================== -->
+    <section class="catalog-section" id="catalog">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">Book Collection</span>
+                <h2 class="section-title">Responsive Online Book Catalog</h2>
+                <div class="section-divider"></div>
+                <p class="section-subtitle">Search, filter by category, sort by price/rating, and inspect detailed book overviews.</p>
+            </div>
+
+            <!-- Catalog Control Bar (Search, Filter Tabs, Sort) -->
+            <div class="catalog-controls">
+                <!-- Search Input with Clear Button -->
+                <div class="search-box-wrapper">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input 
+                        type="text" 
+                        id="search-input" 
+                        class="search-input" 
+                        placeholder="Search books by title or author name..." 
+                        autocomplete="off"
+                        aria-label="Search books by title or author"
+                    >
+                    <button id="clear-search-btn" class="clear-search-btn" title="Clear search" aria-label="Clear search">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+
+                <!-- Category Filter Buttons -->
+                <div class="filter-tabs-wrapper" role="tablist" aria-label="Category Filters">
+                    <button class="filter-btn active" data-filter="All" role="tab" aria-selected="true">
+                        <i class="fa-solid fa-border-all"></i> All Books
+                    </button>
+                    <button class="filter-btn" data-filter="Programming" role="tab" aria-selected="false">
+                        <i class="fa-solid fa-code"></i> Programming
+                    </button>
+                    <button class="filter-btn" data-filter="Fiction" role="tab" aria-selected="false">
+                        <i class="fa-solid fa-feather-pointed"></i> Fiction
+                    </button>
+                    <button class="filter-btn" data-filter="Science" role="tab" aria-selected="false">
+                        <i class="fa-solid fa-atom"></i> Science
+                    </button>
+                    <button class="filter-btn" data-filter="Technology" role="tab" aria-selected="false">
+                        <i class="fa-solid fa-microchip"></i> Technology
+                    </button>
+                </div>
+
+                <!-- Sorting and Active Results Summary -->
+                <div class="catalog-sub-controls">
+                    <div class="results-count" id="results-count">
+                        Showing <strong id="showing-count">0</strong> of <strong id="total-count">0</strong> books
+                    </div>
+
+                    <div class="sort-wrapper">
+                        <label for="sort-select" class="sort-label"><i class="fa-solid fa-arrow-down-short-wide"></i> Sort By:</label>
+                        <select id="sort-select" class="sort-select" aria-label="Sort books">
+                            <option value="featured">Featured (Default)</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="rating-high">Rating: Highest First</option>
+                            <option value="title-az">Title: A to Z</option>
+                            <option value="title-za">Title: Z to A</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dynamic Books Grid (Populated via script.js) -->
+            <div class="books-grid" id="books-grid" role="region" aria-live="polite">
+                <!-- Book Cards will be rendered here dynamically -->
+            </div>
+
+            <!-- Empty State / No Books Found (Shown when search/filter has 0 matches) -->
+            <div class="no-books-state" id="no-books-state" style="display: none;">
+                <div class="no-books-icon">
+                    <i class="fa-solid fa-book-bookmark"></i>
+                </div>
+                <h3>No Matching Books Found</h3>
+                <p>We couldn't find any books matching your search or category filter. Try using different keywords or reset your filters.</p>
+                <button class="btn btn-primary" id="reset-filters-btn">
+                    <i class="fa-solid fa-rotate-left"></i> Reset All Filters
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==============================================
+         5. ABOUT PROJECT SECTION (COLLEGE MWP SPECIFICATION)
+         ============================================== -->
+    <section class="about-section" id="about">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">Project Overview</span>
+                <h2 class="section-title">About This MWP Mini Project</h2>
+                <div class="section-divider"></div>
+                <p class="section-subtitle">Mini Project requirements, architecture, and technology stack.</p>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="about-card-icon"><i class="fa-brands fa-html5"></i></div>
+                    <h3>Semantic HTML5</h3>
+                    <p>Clean structure utilizing semantic tags including <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, and <code>&lt;footer&gt;</code>.</p>
+                </div>
+
+                <div class="about-card">
+                    <div class="about-card-icon"><i class="fa-brands fa-css3-alt"></i></div>
+                    <h3>Modern Responsive CSS3</h3>
+                    <p>Designed with CSS Grid, Flexbox, custom variables, fluid typography, smooth animations, and a white & dark green theme.</p>
+                </div>
+
+                <div class="about-card">
+                    <div class="about-card-icon"><i class="fa-brands fa-js"></i></div>
+                    <h3>Vanilla JavaScript ES6+</h3>
+                    <p>Dynamic DOM rendering, real-time search, multi-category filtering, sorting algorithms, favorites tracking, and interactive modal dialogs.</p>
+                </div>
+
+                <div class="about-card">
+                    <div class="about-card-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+                    <h3>Multi-Device Responsive</h3>
+                    <p>100% responsive user experience crafted for mobile phones, tablets, laptops, and ultra-wide desktop screens.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==============================================
+         6. FOOTER
+         ============================================== -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="#home" class="logo">
+                        <span class="logo-icon"><i class="fa-solid fa-book-open-reader"></i></span>
+                        <span class="logo-text">Book<span class="logo-highlight">Verse</span></span>
+                    </a>
+                    <p class="footer-tagline">
+                        A modern, responsive online book catalog developed for College MWP Mini Project. Built with pure HTML, CSS, and JavaScript.
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#catalog"><i class="fa-solid fa-chevron-right"></i> Book Catalog</a></li>
+                        <li><a href="#categories"><i class="fa-solid fa-chevron-right"></i> Categories</a></li>
+                        <li><a href="#about"><i class="fa-solid fa-chevron-right"></i> About Project</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="#catalog" class="footer-filter-link" data-category="Programming"><i class="fa-solid fa-chevron-right"></i> Programming</a></li>
+                        <li><a href="#catalog" class="footer-filter-link" data-category="Fiction"><i class="fa-solid fa-chevron-right"></i> Fiction</a></li>
+                        <li><a href="#catalog" class="footer-filter-link" data-category="Science"><i class="fa-solid fa-chevron-right"></i> Science</a></li>
+                        <li><a href="#catalog" class="footer-filter-link" data-category="Technology"><i class="fa-solid fa-chevron-right"></i> Technology</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Mini Project Info</h4>
+                    <p class="project-info-item"><strong>Title:</strong> Online Book Catalog</p>
+                    <p class="project-info-item"><strong>Domain:</strong> Web Development</p>
+                    <p class="project-info-item"><strong>Stack:</strong> HTML5, CSS3, JavaScript</p>
+                    <p class="project-info-item"><strong>Theme:</strong> White & Dark Green</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2026</span> BookVerse. College MWP Mini Project. All rights reserved.</p>
+                <p class="footer-note">Crafted with pure HTML, CSS, & Vanilla JS</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==============================================
+         7. VIEW DETAILS MODAL POPUP
+         ============================================== -->
+    <div class="modal-overlay" id="book-modal" aria-hidden="true" role="dialog" aria-labelledby="modal-book-title">
+        <div class="modal-card">
+            <!-- Modal Close Button -->
+            <button class="modal-close-btn" id="modal-close-btn" aria-label="Close modal dialog">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="modal-body" id="modal-body">
+                <!-- Modal content dynamically injected by script.js -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ==============================================
+         8. TOAST NOTIFICATION CONTAINER
+         ============================================== -->
+    <div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+    <!-- ==============================================
+         9. JAVASCRIPT FILE
+         ============================================== -->
+    <script src="script.js"></script>
+</body>
+</html>
